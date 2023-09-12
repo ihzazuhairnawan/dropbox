@@ -32,12 +32,13 @@ jobs:
           
           # 列出文件(此处不展示)
           echo "列出文件(此处不展示)"
-          rclone lsd onedrive:/ > "lsd.log" --config=rclone.conf
-          rclone mkdir onedrive:/E5-Rclone-Actions-Repo/ --config=rclone.conf
-          rclone move lsd.log onedrive:/E5-Rclone-Actions-Repo/ --config=rclone.conf
-          rclone delete onedrive:/E5-Rclone-Actions-Repo/lsd.log --config=rclone.conf
-          rclone rmdir onedrive:/E5-Rclone-Actions-Repo/ --config=rclone.conf
+          rclone lsd dropbox:/ > "lsd.log" --config=rclone.conf
+          rclone copy dropbox:/dummy.txt . --config=rclone.conf
+          rclone mkdir dropbox:/E5-Rclone-Actions-Repo/ --config=rclone.conf
+          rclone rmdir dropbox:/E5-Rclone-Actions-Repo/ --config=rclone.conf
           rm rclone.conf
+          rm dummy.txt
+          rm lsd.log
           
       - name: Commit config #提交配置文件
         run: |
