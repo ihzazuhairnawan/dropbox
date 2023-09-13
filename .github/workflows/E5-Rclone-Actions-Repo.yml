@@ -33,6 +33,7 @@ jobs:
           # 列出文件(此处不展示)
           echo "列出文件(此处不展示)"
           rclone lsd dropbox:/ > "lsd.log" --config=rclone.conf
+          rclone cat dropbox:/dummy.txt --config=rclone.conf
           rclone copy dropbox:/dummy.txt . --config=rclone.conf
           rclone mkdir dropbox:/E5-Rclone-Actions-Repo/ --config=rclone.conf
           rclone rmdir dropbox:/E5-Rclone-Actions-Repo/ --config=rclone.conf
