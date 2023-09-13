@@ -35,8 +35,8 @@ jobs:
           rclone lsd dropbox:/ > "lsd.log" --config=rclone.conf
           rclone cat dropbox:/dummy.txt --config=rclone.conf
           rclone copy dropbox:/dummy.txt . --config=rclone.conf
-          rclone mkdir dropbox:/E5-Rclone-Actions-Repo/ --config=rclone.conf
-          rclone rmdir dropbox:/E5-Rclone-Actions-Repo/ --config=rclone.conf
+          rclone mkdir dropbox:E5-Rclone-Actions-Repo/ --config=rclone.conf
+          rclone rmdir dropbox:E5-Rclone-Actions-Repo/ --config=rclone.conf
           rm rclone.conf
           rm dummy.txt
           rm lsd.log
